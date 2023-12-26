@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'eb-garamond';
+    src: url(fonts/EBGaramond-VariableFont_wght.ttf) format('truetype');
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'eb-garamond';
+    src: url(fonts/EBGaramond-Italic-VariableFont_wght.ttf) format('truetype');
+    font-style: italic;
+  }
+
+body {
+    background-color: rgb(211, 208, 202);
+    font-family: 'eb-garamond', serif;
+    font-size: clamp(1vw, 2.5vw, 3vw);
+    font-feature-settings: 'kern', 'swsh';
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    color: #000000;
+}
+
+.container {
+    transition: 0.3s ease;
+}
+
+#sketch-container {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: 1px solid #00000030;
+    box-shadow: 3px 3px 3px #00000030;
+    background-color: rgb(211, 208, 202);
+}
+
+.headline {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    width: 50%;
+    background-color: #D5C400;
+}
+
+em {
+    font-style: italic;
+}
+
+#card-container {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100vw / 1.5);
+    height: calc(100vw / 1.5 / 1.77777777778);
+    background-color: rgb(195, 191, 183);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    box-shadow: 3px 3px 3px #00000030;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.card {
+    display: flex;
+    align-items: flex-end;
+    height: 50%;
+    padding: 24px;
+    background-color: #FF67C1;
+}
+
+.card a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.card:nth-of-type(2) {
+    background-color: #24A5FF;
+}
+
+.card a::after {
+    content: '❧';
+    transition: 0.5s ease;
+}
+
+.card a:hover::after {
+    margin-left: 16px;
+}
+
+.active {
+    transform: translate(-50%, -50%) rotate(0);
+    z-index: 1;
+    cursor: auto;
+}
+
+.inactive {
+    transform: translate(-52%, -55%) rotate(-5deg);
+    z-index: -1;
+    cursor: pointer;
+}
+
+.inactive:hover {
+-webkit-animation-name: wiggle;
+  -ms-animation-name: wiggle;
+  animation-name: wiggle;
+  -ms-animation-duration: 1000ms;
+  -webkit-animation-duration: 1000ms;
+  animation-duration: 1000ms;
+  -webkit-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+
+  @-webkit-keyframes wiggle {
+    0% {transform: translate(-52%, -55%) rotate(-5deg);}
+    50% {transform: translate(-52%, -55%) rotate(-4deg);}
+    100% {transform: translate(-52%, -55%) rotate(-5deg);}
+  }
+
+  @-ms-keyframes wiggle {
+    0% {transform: translate(-52%, -55%) rotate(-5deg);}
+    50% {transform: translate(-52%, -55%) rotate(-4deg);}
+    100% {transform: translate(-52%, -55%) rotate(-5deg);}
+  }
+  
+  @keyframes wiggle {
+    0% {transform: translate(-52%, -55%) rotate(-5deg);}
+    50% {transform: translate(-52%, -55%) rotate(-4deg);}
+    100% {transform: translate(-52%, -55%) rotate(-5deg);}
+  }
